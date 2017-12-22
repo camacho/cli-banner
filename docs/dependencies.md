@@ -1,4 +1,4 @@
-#Dependencies
+# Dependencies
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 
@@ -6,7 +6,7 @@
 * [Development](#development)
   <!-- AUTO-GENERATED-CONTENT:END -->
 
-###Production
+### Production
 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:production=true) -->
 
@@ -18,7 +18,7 @@
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-###Development
+### Development
 
 <!-- AUTO-GENERATED-CONTENT:START (DEPENDENCYTABLE:production=false&dev=true) -->
 
