@@ -1,0 +1,34 @@
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    YARN_VERSION: 1.3.2
+  node:
+    version: 8.9.0
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - ~/.yarn
+    - ~/.cache/yarn
+    - ./node_modules
+  pre:
+    - |
+      if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+        curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+      fi
+    - yarn global add greenkeeper-lockfile
+  override:
+    - yarn
+
+test:
+  pre:
+    - greenkeeper-lockfile-update
+  override:
+    - yarn danger
+    - yarn lint
+    - yarn deps:unused
+    - yarn test --coverage --runInBand --ci
+  post:
+    - greenkeeper-lockfile-upload
+    - yarn codecov ./artifacts/coverage-final.json

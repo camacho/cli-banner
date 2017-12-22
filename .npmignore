@@ -1,0 +1,12 @@
+node_modules/
+config/
+scripts/
+dangerfile.js
+circle.yml
+.npmrc
+.gitattributes
+.eslintrc.json
+.eslintignore
+.prettierrc
+.prettierignore
+.editorconfig
