@@ -1,4 +1,4 @@
-## CLI Box
+## CLI Banner
 
 Create boxes around strings - great for console printing
 
